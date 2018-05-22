@@ -1,8 +1,15 @@
 angular
   .module("angularServiceNow")
-  .controller("FotosController", function($scope) {
-    $scope.foto = {
-      nome: "Leao",
-      url: "https://www.ahnegao.com.br/wp-content/uploads/2018/05/img-2-2.jpg"
-    };
+  .controller("FotosController", function($scope, $http) {
+    $scope.fotos = [];
+
+    $http
+      .get("/v1/fotos")
+      .success(function(retorno) {
+        console.log(retorno);
+        $scope.fotos = retorno; // não precisa fazer retorno.data
+      })
+      .error(function(erro) {
+        console.log(erro);
+      });
   });
