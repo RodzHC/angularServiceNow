@@ -2,6 +2,7 @@ angular
   .module("angularServiceNow")
   .controller("FotosController", function($scope, $http) {
     $scope.fotos = [];
+    $scope.filtro = "";
 
     $http
       .get("/v1/fotos")

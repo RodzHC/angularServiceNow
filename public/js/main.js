@@ -1,1 +1,1 @@
-angular.module("angularServiceNow", ["minhasDiretivas"]);
+angular.module("angularServiceNow", ["minhasDiretivas", "ngAnimate"]);
