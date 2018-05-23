@@ -1,1 +1,1 @@
-angular.module("angularServiceNow", []);
+angular.module("angularServiceNow", ["minhasDiretivas"]);
