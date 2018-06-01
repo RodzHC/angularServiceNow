@@ -7,5 +7,13 @@ angular
       templateUrl: "partials/principal.html",
       controller: "FotosController"
     });
+    $routeProvider.when("/fotos/new", {
+      templateUrl: "partials/fotoCadastro.html",
+      controller: "FotoCadastroController"
+    });
+    $routeProvider.when("/fotos/edit/:fotoId", {
+      templateUrl: "partials/fotoCadastro.html",
+      controller: "FotoCadastroController"
+    });
     $routeProvider.otherwise({ redirectTo: "/fotos" });
   });

@@ -1,18 +1,34 @@
 <div class="container">
   <div class="jumbotron">
-      <h1 class="text-center">Alurapic</h1>
+      <h1 class="text-center">Angular Teste</h1>
   </div>
+  <p ng-show="mensagem.length" class="alert alert-info">
+    {{mensagem}}
+  </p>
   <!-- novidade, a row com o campo de busca -->
     <div class="row">
         <div class="col-md-12">
         <form>
-             <input class="form-control" placeholder="filtrar pelo título da foto" ng-model="filtro" ng-model-options="{ debounce: 500 }">
+          <div class="input-group">
+            <span class='input-group-btn'>
+              <a href="fotos/new" class='btn btn-primary'>Nova Forto</a>
+            </span>
+            <input class="form-control" placeholder="filtrar pelo título da foto" ng-model="filtro" ng-model-options="{ debounce: 500 }">
+           </div>
         </form>
         </div> <!-- fim col-md-12 -->
     </div> <!-- fim row -->
   <div class="row">
       <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter :  filtro" titulo="{{foto.titulo}}">
           <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+          <a class="btn btn-primary btn-block" href="/fotos/edit/{{foto._id}}">
+            Editar
+        </a>
+
+        <button class="btn btn-danger btn-block"
+            ng-click="remover(foto)">
+            Remover
+        </button>
       </meu-painel>
   </div><!-- fim row -->
 </div> <!-- fim container -->
